@@ -11,10 +11,7 @@ const boy = {
   },
 
   receive() {
-    this.handleMessage('hello2', (message) => {
-      console.log(message, this.name);
-      console.log(message, this.name);
-    });
+    this.handleMessage('hello2', message => console.log(message, this.name));
   },
 };
 
@@ -31,14 +28,14 @@ receive(() => console.log('hello'));
 const firstName = 'Lana';
 const lastName = 'Dz';
 
-const person = {
+const personObj = {
   firstName,
   lastName,
   say: () => console.log('singing'),
 };
 
-console.log(person.lastName);
-person.say();
+console.log(personObj.lastName);
+personObj.say();
 
 // spread operator
 
@@ -80,3 +77,35 @@ const tag = (strings, ...values) => {
 const message = tag`It's ${new Date().getHours()} and I am ${''}`;
 
 console.log(message);
+
+// 09 Destructuring
+
+const { name } = {
+  color: 'blue',
+  name: 'prop',
+  size: 'big',
+};
+
+console.log(name);
+
+const generateObj = () => ({
+  color: 'blue',
+  name: 'prop',
+  size: 'big',
+});
+
+const { color: innerColor } = generateObj();
+console.log(innerColor);
+
+const people = [
+  { name: 'Myk', role: 'be engineer', age: '36' },
+  { name: 'Lana', role: 'fe engineer', age: '34' },
+  { name: 'Andrew', role: 'designer', age: '11' },
+];
+people.forEach(({ name: n }) => {
+  console.log(n);
+});
+
+const logRole = ({ role }) => console.log(role);
+const [, lana] = people;
+logRole(lana);
