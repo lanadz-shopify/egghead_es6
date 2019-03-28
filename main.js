@@ -116,3 +116,10 @@ logRole(lana);
 //
 // console.log(sumTwo(1, 2));
 console.log('1+2 = ', sumTwo(1, 2));
+
+// 10 array like object
+const productList = Array.from(document.querySelectorAll('.element'));
+console.log(productList);
+productList
+  .filter(product => parseFloat(product.innerHTML) < 10)
+  .forEach((product) => { product.style.color = 'red'; });
