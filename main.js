@@ -117,9 +117,31 @@ logRole(lana);
 // console.log(sumTwo(1, 2));
 console.log('1+2 = ', sumTwo(1, 2));
 
-// 10 array like object
+// 11 array like object
 const productList = Array.from(document.querySelectorAll('.element'));
 console.log(productList);
 productList
   .filter(product => parseFloat(product.innerHTML) < 10)
   .forEach((product) => { product.style.color = 'red'; });
+
+
+// 12 Promises
+const promiseBool = true;
+
+const promise = new Promise((resolve, reject) => {
+  // throw new Error('error thrown!');
+  setTimeout(() => {
+    if (promiseBool) {
+      resolve('success');
+    } else {
+      reject(new Error('Failure'));
+    }
+  }, 2000);
+});
+
+promise.then((data) => {
+  console.log(`then received: ${data}`);
+  return 'first then data';
+})
+  .then((data) => { console.log(`second then received: ${data}`); })
+  .catch((error) => { console.log(`catch received: ${error}`); });
