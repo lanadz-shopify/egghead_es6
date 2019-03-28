@@ -122,6 +122,7 @@ const productList = Array.from(document.querySelectorAll('.element'));
 console.log(productList);
 productList
   .filter(product => parseFloat(product.innerHTML) < 10)
+  // eslint-disable-next-line no-param-reassign
   .forEach((product) => { product.style.color = 'red'; });
 
 
