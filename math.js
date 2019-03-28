@@ -1,3 +1,2 @@
 const sumTwo = (a, b) => a + b;
-
-export { sumTwo };
+export default sumTwo;

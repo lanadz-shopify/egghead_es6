@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 // import { sumTwo } from './math.js';
-import * as addition from './math.js';
+import sumTwo from './math.js';
 
 // 02-03 Fat arrow
 const arrowGreeting = name => `${name}, hello`;
@@ -115,4 +115,4 @@ const [, lana] = people;
 logRole(lana);
 //
 // console.log(sumTwo(1, 2));
-console.log('1+2 = ', addition.sumTwo(1, 2));
+console.log('1+2 = ', sumTwo(1, 2));
